@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,19 +18,26 @@ namespace xamarinCalculator
 
         private void AddingChar(object sender, EventArgs e)
         {
-            lblOutput.Text += (sender as Button).Text;
+            if (lblOutput.Text == "Operation doesn't find" || lblOutput.Text == "Division by zero Error!")
+                lblOutput.Text = (sender as Button).Text;
+            else
+                lblOutput.Text += (sender as Button).Text;
         }
 
         private void CalculateResult(object sender, EventArgs e)
         {
-            char[] operators = new char[] { '+', '-', '*', '/' };
-            string[] strOperators = new string[] { "sum", "subtraction", "multiplication", "division" };
+            char[] operators = new char[] { '+', '-', '*', '/', '%' };
+            string[] strOperators = new string[] { "sum", "subtraction", "multiplication", "division", "mod" };
 
             // try to find the operator
             List<string> data = new List<string>();
             bool isFind = false;
             string op = "";
             string expression = lblOutput.Text;
+
+            //if (expression.Contains(','))
+            //    Debug.WriteLine("comma");
+
             for (int i = 0; i < operators.Length; i++)
                 if (expression.Contains(operators[i]))
                 {
@@ -38,25 +46,41 @@ namespace xamarinCalculator
                     op = strOperators[i];
                     break;
                 }
+                else
+                    isFind = false;
 
             if (!isFind)
                 lblOutput.Text = "Operation doesn't find";
-
-            // Faccio i calcoli
-            double.TryParse(data[0], out double firstOperator);
-            double.TryParse(data[1], out double secondOperator);
-
-            if (op == "division")
-                if (data[1] == "0")
-                    lblOutput.Text = "Division by zero Error!";
-                else
-                    lblOutput.Text = Convert.ToString(firstOperator / secondOperator);
-            else if (op == "sum")
-                lblOutput.Text = Convert.ToString(firstOperator + secondOperator);
-            else if (op == "subtraction")
-                lblOutput.Text = Convert.ToString(firstOperator - secondOperator);
             else
-                lblOutput.Text = Convert.ToString(firstOperator * secondOperator);
+            {
+                // Faccio i calcoli
+                double.TryParse(data[0], out double firstOperator);
+                double.TryParse(data[1], out double secondOperator);
+
+                if (op == "division")
+                {
+                    if (data[1] == "0")
+                        lblOutput.Text = "Division by zero Error!";
+                    else
+                        lblOutput.Text = Convert.ToString(firstOperator / secondOperator);
+                }
+                else if (op == "sum")
+                {
+                    lblOutput.Text = Convert.ToString(firstOperator + secondOperator);
+                }
+                else if (op == "subtraction")
+                {
+                    lblOutput.Text = Convert.ToString(firstOperator - secondOperator);
+                }
+                else if (op == "multiplication")
+                {
+                    lblOutput.Text = Convert.ToString(firstOperator * secondOperator);
+                }
+                else if (op == "mod")
+                {
+                    lblOutput.Text = Convert.ToString(firstOperator % secondOperator);
+                }
+            }
         }
 
         private void DeleteExpression(object sender, EventArgs e)

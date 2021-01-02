@@ -53,7 +53,7 @@
                 Clicked="DeleteExpression"
                 />
             <Button
-                x:Name="btn100"
+                x:Name="btnMod"
                 Grid.Row="1"
                 Grid.Column="2"
                 Text="%"
