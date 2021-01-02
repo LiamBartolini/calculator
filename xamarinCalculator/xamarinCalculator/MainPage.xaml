@@ -43,14 +43,14 @@
                 Grid.Row="1"
                 Grid.Column="0"
                 Text="C"
-                Clicked="AggiungiCarattere"
+                Clicked="PoppingChar"
                 />
             <Button
                 x:Name="btnCE"
                 Grid.Row="1"
                 Grid.Column="1"
                 Text="CE"
-                Clicked="AggiungiCarattere"
+                Clicked="DeleteExpression"
                 />
             <Button
                 x:Name="btn100"
@@ -166,7 +166,6 @@
                 Clicked="AggiungiCarattere"
                 BackgroundColor="Transparent"
                 />
-
             <Button
                 x:Name="btn0"
                 Text="0"
