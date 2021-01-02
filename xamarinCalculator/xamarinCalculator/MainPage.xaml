@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xamarinCalculator.MainPage">
 
-    <StackLayout>
+    <StackLayout x:Name="outerStack" Orientation="Vertical">
         <Label
             Text="Simple calculator"
             HorizontalOptions="CenterAndExpand"
@@ -15,6 +15,7 @@
         <!--Tasti-->
         <Grid Margin="65">
             <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -186,6 +187,13 @@
                 Grid.Row="5"
                 Grid.Column="3"
                 Clicked="CalculateResult"
+                />
+
+            <Button
+                Grid.Row="6"
+                Grid.ColumnSpan="4"
+                Text="scientific calculator"
+                VerticalOptions="Center"
                 />
         </Grid>
     </StackLayout>

@@ -91,11 +91,34 @@ namespace xamarinCalculator
         private void PoppingChar(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
-            List<char> listExpression = lblOutput.Text.ToList();
-            listExpression.RemoveAt(listExpression.Count - 1);
-            foreach (char c in listExpression)
-                sb.Append(c.ToString());
-            lblOutput.Text = sb.ToString();
+            if (lblOutput.Text.Length != 0)
+            {
+                List<char> listExpression = lblOutput.Text.ToList();
+                listExpression.RemoveAt(listExpression.Count - 1);
+                foreach (char c in listExpression)
+                    sb.Append(c.ToString());
+                lblOutput.Text = sb.ToString();
+            }
+            else
+                lblOutput.Text = "";
+        }
+
+        private double width = 0;
+        private double height = 0;
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            if (this.width != width || this.height != height)
+            {
+                this.width = width;
+                this.height = height;
+
+                if (width > height)
+                    outerStack.Orientation = StackOrientation.Horizontal;
+                else
+                    outerStack.Orientation = StackOrientation.Vertical;
+            }
         }
     }
 }
