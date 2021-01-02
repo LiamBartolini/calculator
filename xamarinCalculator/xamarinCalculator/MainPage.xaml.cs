@@ -15,27 +15,48 @@ namespace xamarinCalculator
             InitializeComponent();
         }
 
-        private void AggiungiCarattere(object sender, EventArgs e)
+        private void AddingChar(object sender, EventArgs e)
         {
             lblOutput.Text += (sender as Button).Text;
         }
 
-        private void CalcolaRisultato(object sender, EventArgs e)
+        private void CalculateResult(object sender, EventArgs e)
         {
             char[] operators = new char[] { '+', '-', '*', '/' };
             string[] strOperators = new string[] { "sum", "subtraction", "multiplication", "division" };
 
-            // Cerca il simbolo e divide i due numeri e poi fa i calcoli e ritorna il risultato
+            // try to find the operator
+            List<string> data = new List<string>();
+            bool isFind = false;
+            string op = "";
             string expression = lblOutput.Text;
-
             for (int i = 0; i < operators.Length; i++)
                 if (expression.Contains(operators[i]))
                 {
-                    lblOutput.Text = strOperators[i];
+                    isFind = true;
+                    data = lblOutput.Text.Split(operators[i]).ToList();
+                    op = strOperators[i];
                     break;
                 }
 
-            lblOutput.Text = "Operazione non trovata";
+            if (!isFind)
+                lblOutput.Text = "Operation doesn't find";
+
+            // Faccio i calcoli
+            double.TryParse(data[0], out double firstOperator);
+            double.TryParse(data[1], out double secondOperator);
+
+            if (op == "division")
+                if (data[1] == "0")
+                    lblOutput.Text = "Division by zero Error!";
+                else
+                    lblOutput.Text = Convert.ToString(firstOperator / secondOperator);
+            else if (op == "sum")
+                lblOutput.Text = Convert.ToString(firstOperator + secondOperator);
+            else if (op == "subtraction")
+                lblOutput.Text = Convert.ToString(firstOperator - secondOperator);
+            else
+                lblOutput.Text = Convert.ToString(firstOperator * secondOperator);
         }
 
         private void DeleteExpression(object sender, EventArgs e)
@@ -51,23 +72,6 @@ namespace xamarinCalculator
             foreach (char c in listExpression)
                 sb.Append(c.ToString());
             lblOutput.Text = sb.ToString();
-=======
-
-            // Cerca il simbolo e divide i due numeri e poi fa i calcoli e ritorna il risultato
-            string[] splittedExpression = lblOutput.Text.Split(' ');
-
-            for (int i = 0; i < operators.Length; i++)
-                // Provo a convertire se non riesce ...
-                try
-                {
-                    if (splittedExpression[1].Contains(operators[i]))
-                        lblOutput.Text = splittedExpression[1];
-                }
-                catch
-                {
-                    continue;
-                }
->>>>>>> e17f312ceeccb7b30454c827cbf3b38e253dd060
         }
     }
 }
