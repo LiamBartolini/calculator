@@ -23,7 +23,6 @@ namespace xamarinCalculator
         private void CalcolaRisultato(object sender, EventArgs e)
         {
             char[] operators = new char[] { '+', '-', '*', '/' };
-<<<<<<< HEAD
             string[] strOperators = new string[] { "sum", "subtraction", "multiplication", "division" };
 
             // Cerca il simbolo e divide i due numeri e poi fa i calcoli e ritorna il risultato
