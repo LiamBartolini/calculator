@@ -4,6 +4,155 @@
              x:Class="xamarinCalculator.MainPage">
 
     <StackLayout>
+        <Label
+            Text="Simple calculator"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Start"
+            FontAttributes="Bold"
+            FontSize="Medium"
+            />
+        
+        <!--Tasti-->
+        <Grid Margin="65">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Entry
+                x:Name="ntrPrimoNumero"
+                Placeholder="Operando"
+                HorizontalTextAlignment="Center"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                IsReadOnly="True"
+                />
+
+            <Entry
+                x:Name="ntrSecondoNumero"
+                Placeholder="Operando"
+                HorizontalTextAlignment="Center"
+                Grid.Row="0"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                IsReadOnly="True"
+                />
+
+            <Button
+                x:Name="btnC"
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="C"
+                />
+            <Button
+                x:Name="btnCE"
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="CE"
+                />
+            <Button
+                x:Name="btn100"
+                Grid.Row="1"
+                Grid.Column="2"
+                Text="%"
+                />
+            <Button
+                x:Name="btnDiv"
+                Grid.Row="1"
+                Grid.Column="3"
+                Text="/"
+                />
+
+            <Button
+                Text="7"
+                Grid.Row="2"
+                Grid.Column="0"
+                />
+            <Button
+                Text="8"
+                Grid.Row="2"
+                Grid.Column="1"
+                />
+            <Button
+                Text="9"
+                Grid.Row="2"
+                Grid.Column="2"
+                />
+            <Button
+                Text="X"
+                Grid.Row="2"
+                Grid.Column="3"
+                />
+            
+            <Button
+                Text="4"
+                Grid.Row="3"
+                Grid.Column="0"
+                />
+            <Button
+                Text="5"
+                Grid.Row="3"
+                Grid.Column="1"
+                />
+            <Button
+                Text="6"
+                Grid.Row="3"
+                Grid.Column="2"
+                />
+            <Button
+                Text="-"
+                Grid.Row="3"
+                Grid.Column="3"
+                />
+            
+            <Button
+                Text="1"
+                Grid.Row="4"
+                Grid.Column="0"
+                />
+            <Button
+                Text="2"
+                Grid.Row="4"
+                Grid.Column="1"
+                />
+            <Button
+                Text="3"
+                Grid.Row="4"
+                Grid.Column="2"
+                />
+            <Button
+                Text="+"
+                Grid.Row="4"
+                Grid.Column="3"
+                />
+            
+            <Button
+                Text="0"
+                Grid.Row="5"
+                Grid.Column="1"
+                />
+            <Button
+                Text=","
+                Grid.Row="5"
+                Grid.Column="2"
+                />
+            <Button
+                Text="="
+                Grid.Row="5"
+                Grid.Column="3"
+                />
+            
+        </Grid>
     </StackLayout>
 
 </ContentPage>
