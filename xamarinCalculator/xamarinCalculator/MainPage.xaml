@@ -43,14 +43,22 @@
                 Grid.Row="1"
                 Grid.Column="0"
                 Text="C"
+<<<<<<< HEAD
                 Clicked="PoppingChar"
+=======
+                Clicked="AggiungiCarattere"
+>>>>>>> e17f312ceeccb7b30454c827cbf3b38e253dd060
                 />
             <Button
                 x:Name="btnCE"
                 Grid.Row="1"
                 Grid.Column="1"
                 Text="CE"
+<<<<<<< HEAD
                 Clicked="DeleteExpression"
+=======
+                Clicked="AggiungiCarattere"
+>>>>>>> e17f312ceeccb7b30454c827cbf3b38e253dd060
                 />
             <Button
                 x:Name="btn100"
@@ -166,6 +174,10 @@
                 Clicked="AggiungiCarattere"
                 BackgroundColor="Transparent"
                 />
+<<<<<<< HEAD
+=======
+
+>>>>>>> e17f312ceeccb7b30454c827cbf3b38e253dd060
             <Button
                 x:Name="btn0"
                 Text="0"

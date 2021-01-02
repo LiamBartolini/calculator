@@ -23,6 +23,7 @@ namespace xamarinCalculator
         private void CalcolaRisultato(object sender, EventArgs e)
         {
             char[] operators = new char[] { '+', '-', '*', '/' };
+<<<<<<< HEAD
             string[] strOperators = new string[] { "sum", "subtraction", "multiplication", "division" };
 
             // Cerca il simbolo e divide i due numeri e poi fa i calcoli e ritorna il risultato
@@ -51,6 +52,23 @@ namespace xamarinCalculator
             foreach (char c in listExpression)
                 sb.Append(c.ToString());
             lblOutput.Text = sb.ToString();
+=======
+
+            // Cerca il simbolo e divide i due numeri e poi fa i calcoli e ritorna il risultato
+            string[] splittedExpression = lblOutput.Text.Split(' ');
+
+            for (int i = 0; i < operators.Length; i++)
+                // Provo a convertire se non riesce ...
+                try
+                {
+                    if (splittedExpression[1].Contains(operators[i]))
+                        lblOutput.Text = splittedExpression[1];
+                }
+                catch
+                {
+                    continue;
+                }
+>>>>>>> e17f312ceeccb7b30454c827cbf3b38e253dd060
         }
     }
 }
