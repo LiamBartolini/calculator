@@ -11,7 +11,7 @@
             FontAttributes="Bold"
             FontSize="Medium"
             />
-        
+
         <!--Tasti-->
         <Grid Margin="65">
             <Grid.RowDefinitions>
@@ -28,131 +28,166 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Entry
-                x:Name="ntrPrimoNumero"
-                Placeholder="Operando"
+            <!--presto cambiate con label di output-->
+            <Label
+                x:Name="lblOutput"
                 HorizontalTextAlignment="Center"
                 Grid.Row="0"
                 Grid.Column="0"
-                Grid.ColumnSpan="2"
-                IsReadOnly="True"
+                Grid.ColumnSpan="4"
                 />
 
-            <Entry
-                x:Name="ntrSecondoNumero"
-                Placeholder="Operando"
-                HorizontalTextAlignment="Center"
-                Grid.Row="0"
-                Grid.Column="2"
-                Grid.ColumnSpan="2"
-                IsReadOnly="True"
-                />
-
+            <!--prima riga-->
             <Button
                 x:Name="btnC"
                 Grid.Row="1"
                 Grid.Column="0"
                 Text="C"
+                Clicked="AggiungiCarattere"
                 />
             <Button
                 x:Name="btnCE"
                 Grid.Row="1"
                 Grid.Column="1"
                 Text="CE"
+                Clicked="AggiungiCarattere"
                 />
             <Button
                 x:Name="btn100"
                 Grid.Row="1"
                 Grid.Column="2"
                 Text="%"
+                Clicked="AggiungiCarattere"
                 />
             <Button
                 x:Name="btnDiv"
                 Grid.Row="1"
                 Grid.Column="3"
                 Text="/"
+                Clicked="AggiungiCarattere"
                 />
 
+            <!--seconda riga-->
             <Button
+                x:Name="btn7"
                 Text="7"
                 Grid.Row="2"
                 Grid.Column="0"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btn8"
                 Text="8"
                 Grid.Row="2"
                 Grid.Column="1"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btn9"
                 Text="9"
                 Grid.Row="2"
                 Grid.Column="2"
+                Clicked="AggiungiCarattere"
                 />
             <Button
-                Text="X"
+                x:Name="btnX"
+                Text="*"
                 Grid.Row="2"
                 Grid.Column="3"
+                Clicked="AggiungiCarattere"
                 />
-            
+
+            <!--terza riga-->
             <Button
+                x:Name="btn4"
                 Text="4"
                 Grid.Row="3"
                 Grid.Column="0"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btn5"
                 Text="5"
                 Grid.Row="3"
                 Grid.Column="1"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btn6"
                 Text="6"
                 Grid.Row="3"
                 Grid.Column="2"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btnMin"
                 Text="-"
                 Grid.Row="3"
                 Grid.Column="3"
+                Clicked="AggiungiCarattere"
                 />
-            
+
+            <!--quarta riga-->
             <Button
+                x:Name="btn1"
                 Text="1"
                 Grid.Row="4"
                 Grid.Column="0"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btn2"
                 Text="2"
                 Grid.Row="4"
                 Grid.Column="1"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btn3"
                 Text="3"
                 Grid.Row="4"
                 Grid.Column="2"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btnPlus"
                 Text="+"
                 Grid.Row="4"
                 Grid.Column="3"
+                Clicked="AggiungiCarattere"
                 />
-            
+
+            <!--quinta riga-->
             <Button
+                x:Name="btnSpace"
+                Text=" "
+                Grid.Row="5"
+                Grid.Column="0"
+                Clicked="AggiungiCarattere"
+                BackgroundColor="Transparent"
+                />
+
+            <Button
+                x:Name="btn0"
                 Text="0"
                 Grid.Row="5"
                 Grid.Column="1"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btnComma"
                 Text=","
                 Grid.Row="5"
                 Grid.Column="2"
+                Clicked="AggiungiCarattere"
                 />
             <Button
+                x:Name="btnEqual"
                 Text="="
                 Grid.Row="5"
                 Grid.Column="3"
+                Clicked="CalcolaRisultato"
                 />
-            
         </Grid>
     </StackLayout>
-
 </ContentPage>
