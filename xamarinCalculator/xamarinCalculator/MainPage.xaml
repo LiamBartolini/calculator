@@ -12,8 +12,18 @@
             FontSize="Medium"
             />
 
+        <Label
+            x:Name="lblHistory"
+            VerticalTextAlignment="End"
+            VerticalOptions="EndAndExpand"
+            HorizontalTextAlignment="End"
+            HeightRequest="30"
+            Margin="65, 70, 65, 0"
+            BackgroundColor="Aqua"
+            />
+        
         <!--Tasti-->
-        <Grid Margin="65">
+        <Grid Margin="65, 0, 65, 15" VerticalOptions="CenterAndExpand" BackgroundColor="Bisque">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -32,19 +42,13 @@
             <Label
                 x:Name="lblOutput"
                 HorizontalTextAlignment="End"
-                VerticalTextAlignment="End"
+                VerticalTextAlignment="Center"  
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"
                 BackgroundColor="AliceBlue"
                 />
-            <Label
-                x:Name="lblHistory"
-                Grid.Row="0"
-                Grid.Column="0"
-                VerticalTextAlignment="Start"
-                />
-            
+
             <!--prima riga-->
             <Button
                 x:Name="btnC"
@@ -64,14 +68,14 @@
                 x:Name="btnMod"
                 Grid.Row="1"
                 Grid.Column="2"
-                Text="%"
+                Text=" % "
                 Clicked="AddingChar"
                 />
             <Button
                 x:Name="btnDiv"
                 Grid.Row="1"
                 Grid.Column="3"
-                Text="/"
+                Text=" / "
                 Clicked="AddingChar"
                 />
 
@@ -99,7 +103,7 @@
                 />
             <Button
                 x:Name="btnX"
-                Text="*"
+                Text=" * "
                 Grid.Row="2"
                 Grid.Column="3"
                 Clicked="AddingChar"
@@ -129,7 +133,7 @@
                 />
             <Button
                 x:Name="btnMin"
-                Text="-"
+                Text=" - "
                 Grid.Row="3"
                 Grid.Column="3"
                 Clicked="AddingChar"
@@ -159,7 +163,7 @@
                 />
             <Button
                 x:Name="btnPlus"
-                Text="+"
+                Text=" + "
                 Grid.Row="4"
                 Grid.Column="3"
                 Clicked="AddingChar"
@@ -190,7 +194,7 @@
                 />
             <Button
                 x:Name="btnEqual"
-                Text="="
+                Text="= "
                 Grid.Row="5"
                 Grid.Column="3"
                 Clicked="CalculateResult"
