@@ -9,9 +9,22 @@ namespace xamarinCalculator.Models
     {
         public static string History { get; private set; }
         public static string Outuput { get; private set; }
+        static bool isBracked = false;
 
         public static string AddingChar(string output, string btnText)
         {
+            if (btnText == "(/)" && !isBracked)
+            {
+                isBracked = true;
+                return output += "(";
+            }
+            
+            if (btnText == "(/)" && isBracked)
+            {
+                isBracked = false;
+                return output += ")";
+            }
+
             if (output == "Operation doesn't find" || output == "Divisio by zero Error")
                 return btnText;
             else
@@ -78,6 +91,7 @@ namespace xamarinCalculator.Models
         {
             Outuput = null;
             History = null;
+            isBracked = false;
         }
 
         public static string PoppingChar(string output)
@@ -86,6 +100,11 @@ namespace xamarinCalculator.Models
             if (!string.IsNullOrEmpty(output))
             {
                 List<char> listExpression = output.ToList();
+                if (listExpression[listExpression.Count - 1] == ')')
+                    isBracked = true;
+                else
+                    isBracked = false;
+
                 if (listExpression[listExpression.Count - 1] == ' ')
                     listExpression.RemoveRange(listExpression.Count - 3, 3);
                 else

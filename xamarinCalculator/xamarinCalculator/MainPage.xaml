@@ -171,8 +171,8 @@
 
             <!--quinta riga-->
             <Button
-                x:Name="btnSpace"
-                Text=" "
+                x:Name="btnBrackets"
+                Text="(/)"
                 Grid.Row="5"
                 Grid.Column="0"
                 Clicked="AddingChar"
