@@ -94,55 +94,6 @@ namespace xamarinCalculator
                 lblOutput.Text = null;
         }
 
-        private void ScientificCalculator(object sender, EventArgs e)
-        {
-            // 7x5
-            Grid grid = new Grid
-            {
-                RowDefinitions =
-                {
-                    new RowDefinition(),
-                    new RowDefinition(),
-                    new RowDefinition(),
-                    new RowDefinition(),
-                    new RowDefinition(),
-                    new RowDefinition(),
-                    new RowDefinition(),
-                },
-                ColumnDefinitions =
-                {
-                    new ColumnDefinition(),
-                    new ColumnDefinition(),
-                    new ColumnDefinition(),
-                    new ColumnDefinition(),
-                    new ColumnDefinition(),
-                },
-                BackgroundColor = Color.Cyan,
-                Margin = 50
-            };
-            grid.Children.Add(new Button { Text = " ! " }, 0, 0);
-            grid.Children.Add(new Button { Text = " 2^x " }, 0, 1);
-            grid.Children.Add(new Button { Text = " x^2 " }, 1, 0);
-            grid.Children.Add(new Button { Text = " x^3 " }, 1, 1);
-            Content = grid;
-        }
-
-        //private double width = 0;
-        //private double height = 0;
-
-        //protected override void OnSizeAllocated(double width, double height)
-        //{
-        //    base.OnSizeAllocated(width, height);
-        //    if (this.width != width || this.height != height)
-        //    {
-        //        this.width = width;
-        //        this.height = height;
-
-        //        if (width > height)
-        //            outerStack.Orientation = StackOrientation.Horizontal;
-        //        else
-        //            outerStack.Orientation = StackOrientation.Vertical;
-        //    }
-        //}
+        private async void ScientificCalculator(object sender, EventArgs e) => await Navigation.PushModalAsync(new ScientificCalculatorPage());
     }
 }
