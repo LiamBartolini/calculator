@@ -53,6 +53,7 @@ namespace xamarinCalculator.Models
             if (cont >= 1)
             {
                 Debug.WriteLine("E' UNA ESPRESSIONE");
+                CalculateExpression(output);
                 isFind = true;
             }
             else if (cont == 0)
@@ -92,13 +93,21 @@ namespace xamarinCalculator.Models
             }
         }
 
-        static void CalculatreExpression(string expression)
+        static void CalculateExpression(string expression)
         {
-            char[] higherPriority = new char[] { '*', '/' };
+            char[] symbol = new char[] { '+', '-', '*', '/' };
+            char[] charExpression = expression.ToCharArray();
+            List<char> symbolPath = new List<char>();
 
-            for (int i = 0; i < higherPriority.Length; i++)
-                if (expression.Contains(higherPriority[i]))
-                    Debug.WriteLine("CAIO");
+            for (int i = 0; i < charExpression.Length; i++)
+                for (int j = 0; j < symbol.Length; j++)
+                    if (charExpression[i] == symbol[j])
+                        symbolPath.Add(symbol[j]);
+
+            // Tutta la stringa e la devo dividere in sotto stringhe fatte da singole operazioni
+
+            // Sorting by priority
+            symbolPath.Sort();
         }
 
         public static void ClearScreen()
