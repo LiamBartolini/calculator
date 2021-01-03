@@ -29,15 +29,22 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <!--presto cambiate con label di output-->
             <Label
                 x:Name="lblOutput"
-                HorizontalTextAlignment="Center"
+                HorizontalTextAlignment="End"
+                VerticalTextAlignment="End"
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"
+                BackgroundColor="AliceBlue"
                 />
-
+            <Label
+                x:Name="lblHistory"
+                Grid.Row="0"
+                Grid.Column="0"
+                VerticalTextAlignment="Start"
+                />
+            
             <!--prima riga-->
             <Button
                 x:Name="btnC"

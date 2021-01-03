@@ -56,7 +56,7 @@ namespace xamarinCalculator
                 // Faccio i calcoli
                 double.TryParse(data[0], out double firstOperator);
                 double.TryParse(data[1], out double secondOperator);
-
+                lblHistory.Text = lblOutput.Text; // Save expression into history label
                 if (op == "division")
                 {
                     if (data[1] == "0")
@@ -85,7 +85,8 @@ namespace xamarinCalculator
 
         private void DeleteExpression(object sender, EventArgs e)
         {
-            lblOutput.Text = "";
+            lblOutput.Text = null;
+            lblHistory.Text = null;
         }
 
         private void PoppingChar(object sender, EventArgs e)
@@ -100,7 +101,7 @@ namespace xamarinCalculator
                 lblOutput.Text = sb.ToString();
             }
             else
-                lblOutput.Text = "";
+                lblOutput.Text = null;
         }
 
         private double width = 0;
