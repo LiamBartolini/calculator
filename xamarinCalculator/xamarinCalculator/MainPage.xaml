@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xamarinCalculator.MainPage">
 
-    <StackLayout x:Name="outerStack" Orientation="Vertical">
+    <StackLayout Orientation="Vertical">
         <Label
             Text="Simple calculator"
             HorizontalOptions="CenterAndExpand"

@@ -3,12 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xamarinCalculator.ScientificCalculatorPage">
 
-    <StackLayout>
+    <StackLayout Orientation="Horizontal">
         <Label
-            Text="CALCOLATRICE SCIENTIFICA"
+            Text="Scientific calculator"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Start"
+            FontAttributes="Bold"
+            FontSize="Medium"
             />
+
+        <Label
+            x:Name="lblHistory"
+            VerticalTextAlignment="End"
+            VerticalOptions="EndAndExpand"
+            HorizontalTextAlignment="End"
+            HeightRequest="30"
+            BackgroundColor="Azure"
+            />
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        
         <Button
-            Text="main page"
+            Text="Simple calculator"
+            VerticalOptions="End"
+            HorizontalOptions="Center"
             Clicked="btnMainPage_Clicked"
             />
     </StackLayout>
