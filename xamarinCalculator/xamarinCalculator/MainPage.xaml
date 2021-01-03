@@ -19,7 +19,7 @@
             HorizontalTextAlignment="End"
             HeightRequest="30"
             Margin="65, 70, 65, 0"
-            BackgroundColor="Aqua"
+            BackgroundColor="Azure"
             />
         
         <!--Tasti-->
@@ -42,7 +42,7 @@
             <Label
                 x:Name="lblOutput"
                 HorizontalTextAlignment="End"
-                VerticalTextAlignment="Center"  
+                VerticalTextAlignment="Center"
                 Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="4"
@@ -205,6 +205,7 @@
                 Grid.ColumnSpan="4"
                 Text="scientific calculator"
                 VerticalOptions="Center"
+                Clicked="ScientificCalculator"
                 />
         </Grid>
     </StackLayout>
